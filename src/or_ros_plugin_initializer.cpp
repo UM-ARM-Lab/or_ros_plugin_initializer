@@ -36,7 +36,7 @@ namespace armlab_or_plugins
                 }
 
                 int argc = (int)args.size();
-                ros::init(argc, args.data(), "openrave_plugin");
+                ros::init(argc, args.data(), "openrave_ros_plugin");
 
                 for (char * arg: args)
                 {
