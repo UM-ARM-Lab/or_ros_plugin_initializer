@@ -29,16 +29,16 @@ namespace armlab_or_plugins
                 {
                     std::string token;
                     string_stream >> token;
-                    char *arg = new char[token.size() + 1];
+                    char* arg = new char[token.size() + 1];
                     std::copy(token.begin(), token.end(), arg);
                     arg[token.size()] = '\0';
                     args.push_back(arg);
                 }
 
                 int argc = (int)args.size();
-                ros::init(argc, args.data(), "openrave_ros_plugin");
+                ros::init(argc, args.data(), "openrave_ros_plugin", ros::init_options::NoSigintHandler);
 
-                for (char * arg: args)
+                for (char* arg: args)
                 {
                     delete[] arg;
                 }
